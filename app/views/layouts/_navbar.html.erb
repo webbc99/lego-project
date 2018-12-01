@@ -1,0 +1,25 @@
+<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+  <%= link_to 'LEGO|PROJECT', root_path, :class => 'navbar-brand' %>
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navLinks">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <%= link_to 'HOME', root_path, :class => 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'ALL PROJECTS', posts_path, :class => 'nav-link' %>
+      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to 'NEW POST', new_post_path, :class => 'nav-link' %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to 'SIGN IN', user_session_path, :class => 'nav-link' %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

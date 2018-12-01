@@ -1,0 +1,19 @@
+<div class="row align-items-center content">
+  <div class="col-md-6 order-2 order-md-1">
+    <%= image_tag @post.image, :class => "img-fluid" %>
+  </div>
+  <div class="col-md-6 text-center order-1 order-md-2">
+    <div class="row justify-content-center">
+      <div class="col-10 col-lg-8 mb-5 mb-md-0">
+        <h2><%= link_to "#{@post.title}", @post %></h2>
+        <%= image_tag 'lego_brick_icon.png', :class => "d-none d-lg-inline" %>
+        <p class="lead text-white post_content"><%= @post.content %></p>
+        <% if user_signed_in? %>
+          <%= link_to 'Edit', edit_post_path(@post), :class => "text-white" %> | 
+          <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "text-white" %> | 
+        <% end %>
+        <%= link_to 'Back', posts_path, :class => "text-white" %>
+      </div>
+    </div>
+  </div>
+</div>

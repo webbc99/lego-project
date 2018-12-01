@@ -1,0 +1,126 @@
+<section class="container-fluid px-0">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <div id="headingGroup" class="text-white text-center d-none d-lg-block mt-5">
+        <h1>LEGO<span>|</span>PROJECT</h1>
+        <p>Welcome to our Lego project site! We'll be building a new lego project every week</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <%= image_tag 'gumball.png', :class => "img-fluid" %>
+    </div>
+  </div>
+</section>
+
+<section class="container-fluid px-0">
+  <div class="row align-items-center content">
+    <div class="col-md-6 order-2 order-md-1">
+      <% if Post.last %>
+        <%= image_tag @post.image, :class => "img-fluid" %>
+      <% else %>
+        <%= image_tag 'gumball.png', :class => "img-fluid" %>
+      <% end %>
+    </div>
+    <div class="col-md-6 text-center order-1 order-md-2">
+      <div class="row justify-content-center">
+        <div class="col-10 col-lg-8 mb-5 mb-md-0">
+          <% if Post.last %>
+            <h2><%= link_to "#{@post.title}", @post %></h2>
+            <%= image_tag 'lego_brick_icon.png', :class => "d-none d-lg-inline" %>
+            <p class="lead text-white post_content"><%= @post.content %></p>
+          <% else %>
+            <h2>LEGO<span>|</span>PROJECT</h2>
+            <%= image_tag 'lego_brick_icon.png', :class => "d-none d-lg-inline" %>
+            <p class="lead text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, iste molestiae
+                            beatae, maiores deserunt
+                            in voluptatibus
+                            aspernatur architecto excepturi delectus soluta? Ipsa, deleniti dolorem hic consequatur
+                            repellat eveniet quidem
+                            voluptate necessitatibus dolorum delectus minus vitae, ut, veritatis sint ipsum magnam
+                            autem nam ex deserunt debitis
+                            eaque ratione! Nobis, quidem assumenda.</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row align-items-center content">
+    <div class="col-md-6 text-center">
+      <div class="row justify-content-center">
+        <div class="col-10 col-lg-8 mb-5 mb-md-0">
+          <% if Post.all.length > 1 %>
+            <h2><%= link_to "#{@last_but_one_post.title}", @last_but_one_post %></h2>
+            <%= image_tag 'lego_brick_icon_2.png', :class => "d-none d-lg-inline" %>
+            <p class="lead text-white post_content"><%= @last_but_one_post.content %></p>
+          <% else %>
+            <h2>LEGO<span>|</span>PROJECT</h2>
+            <%= image_tag 'lego_brick_icon_2.png', :class => "d-none d-lg-inline" %>
+            <p class="lead text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, iste molestiae
+                            beatae, maiores deserunt
+                            in voluptatibus
+                            aspernatur architecto excepturi delectus soluta? Ipsa, deleniti dolorem hic consequatur
+                            repellat eveniet quidem
+                            voluptate necessitatibus dolorum delectus minus vitae, ut, veritatis sint ipsum magnam
+                            autem nam ex deserunt debitis
+                            eaque ratione! Nobis, quidem assumenda.</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <% if Post.all.length > 1 %>
+        <%= image_tag @last_but_one_post.image, :class => "img-fluid" %>
+      <% else %>
+        <%= image_tag 'gumball.png', :class => "img-fluid" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row align-items-center content">
+    <div class="col-md-6 order-2 order-md-1">
+      <% if Post.all.length > 2 %>
+        <%= image_tag @last_but_two_post.image, :class => "img-fluid" %>
+      <% else %>
+        <%= image_tag 'gumball.png', :class => "img-fluid" %>
+      <% end %>
+    </div>
+    <div class="col-md-6 text-center order-1 order-md-2">
+      <div class="row justify-content-center">
+        <div class="col-10 col-lg-8 mb-5 mb-md-0">
+          <% if Post.all.length > 2 %>
+            <h2><%= link_to "#{@last_but_two_post.title}", @last_but_two_post %></h2>
+            <%= image_tag 'lego_brick_icon_3.png', :class => "d-none d-lg-inline" %>
+            <p class="lead text-white post_content"><%= @last_but_two_post.content %></p>
+          <% else %>
+            <h2><a href="#">LEGO<span>|</span>PROJECT</a></h2>
+            <%= image_tag 'lego_brick_icon_3.png', :class => "d-none d-lg-inline" %>
+            <p class="lead text-white">Check back later when we post more Lego projects!</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row align-items-center content">
+    <div class="col-md-6 text-center">
+      <div class="row justify-content-center">
+        <div class="col-10 col-lg-8 mb-5 mb-md-0">
+          <% if Post.all.length > 3 %>
+            <h2><%= link_to "#{@last_but_three_post.title}", @last_but_three_post %></h2>
+            <%= image_tag 'lego_brick_icon_4.png', :class => "d-none d-lg-inline" %>
+            <p class="lead text-white post_content"><%= @last_but_three_post.content %></p>
+          <% else %>
+            <h2><a href="#">LEGO<span>|</span>PROJECT</a></h2>
+            <%= image_tag 'lego_brick_icon_4.png', :class => "d-none d-lg-inline" %>
+            <p class="lead text-white">Lego is fun! Guess what we're building next!</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <% if Post.all.length > 3 %>
+        <%= image_tag @last_but_three_post.image, :class => "img-fluid" %>
+      <% else %>
+        <%= image_tag 'gumball.png', :class => "img-fluid" %>
+      <% end %>
+    </div>
+  </div>
+</section>
